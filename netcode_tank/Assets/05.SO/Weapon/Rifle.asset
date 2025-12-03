@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Rifle
   m_EditorClassIdentifier: 
   WeaponName: Rifle
-  Damage: 5
-  RPM: 540
-  MagazineSize: 12
-  WeaponPrefab: {fileID: 8203414906973883996, guid: 699e7cd0803f1c44492b79a0cfd57e4c, type: 3}
-  WeaponPosition: {x: 0, y: 0}
+  Damage: 30
+  RPM: 600
+  projectileSpeed: 25
+  MagazineSize: 30
+  WeaponPrefab: {fileID: -6749647648543450335, guid: e8cb07540982b3c47903e64688a0da2d, type: 3}
+  FireType: 1

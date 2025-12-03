@@ -8,9 +8,9 @@ namespace Code.Players
         [Header("Reference modules")]
         [field: SerializeField] public PlayerInputSO PlayerInput { get; private set; }
 
+        [SerializeField] private Transform visual;
         [Header("Setting values")]
-        [SerializeField] private float moveSpeed = 5f;
-        [SerializeField] private float turningRate = 30f; //회전속도
+        [SerializeField] private float moveSpeed = 8f;
 
         private Rigidbody2D _rigidbody;
         private Vector2 _inputMovement;
@@ -35,19 +35,12 @@ namespace Code.Players
 
         private void HandleMoveKeyPress(Vector2 movementInput) => _inputMovement = movementInput;
 
-        private void Update()
-        {
-            if(!IsOwner) return;
 
-
-
-           
-        }
 
         private void FixedUpdate()
         {
             if (!IsOwner) return;
-            _rigidbody.linearVelocity = transform.up *(_inputMovement.y * moveSpeed);
+            _rigidbody.linearVelocity = _inputMovement * moveSpeed;
         }
     }
 }

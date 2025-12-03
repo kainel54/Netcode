@@ -10,7 +10,6 @@ public class WeaponSO : ScriptableObject
     public float projectileSpeed;
     public int MagazineSize;
     public Weapon WeaponPrefab;
-    public Vector2 WeaponPosition;
     public FireType FireType;
 }
 

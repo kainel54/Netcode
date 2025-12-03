@@ -3,7 +3,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Code.UI
+namespace Code.Network
 {
     public class NetworkButtonUI : MonoBehaviour
     {

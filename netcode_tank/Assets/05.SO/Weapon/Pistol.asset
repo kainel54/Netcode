@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponName: Pistol
   Damage: 5
-  RPM: 540
+  RPM: 300
+  projectileSpeed: 30
   MagazineSize: 12
-  WeaponPrefab: {fileID: 8203414906973883996, guid: 699e7cd0803f1c44492b79a0cfd57e4c, type: 3}
-  WeaponPosition: {x: 0, y: 0}
+  WeaponPrefab: {fileID: -46268594358984441, guid: 699e7cd0803f1c44492b79a0cfd57e4c, type: 3}
+  FireType: 0

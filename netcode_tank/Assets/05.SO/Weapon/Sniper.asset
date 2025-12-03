@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda88d146092ffc4394f16b7ddef6db0, type: 3}
   m_Name: Sniper
   m_EditorClassIdentifier: 
-  WeaponName: Rifle
-  Damage: 5
-  RPM: 540
-  MagazineSize: 12
-  WeaponPrefab: {fileID: 8203414906973883996, guid: 699e7cd0803f1c44492b79a0cfd57e4c, type: 3}
-  WeaponPosition: {x: 0, y: 0}
+  WeaponName: Sniper
+  Damage: 80
+  RPM: 60
+  projectileSpeed: 60
+  MagazineSize: 5
+  WeaponPrefab: {fileID: -7883343360087155350, guid: 2b5de8a46ba95674fb92ca832cadc968, type: 3}
+  FireType: 0
