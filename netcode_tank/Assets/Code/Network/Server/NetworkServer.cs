@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using Unity.Netcode;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 namespace Code.Network.Server
@@ -29,6 +30,11 @@ namespace Code.Network.Server
             string json = Encoding.UTF8.GetString(req.Payload);
             UserData data = JsonUtility.FromJson<UserData>(json);
 
+            if (!_authIdToUserDataDictionary.ContainsKey(data.userAuthId)) // 중복 확인
+            {
+                _clientIdToAuthDictionary.Add(req.ClientNetworkId, data.userAuthId);
+                _authIdToUserDataDictionary.Add(data.userAuthId, data);
+            }
             Debug.Log(data.username);
 
             res.CreatePlayerObject = false; //플레이어 오브젝트 자동생성 꺼주기.
@@ -72,5 +78,18 @@ namespace Code.Network.Server
                 _networkManager.Shutdown();
             }
         }
+        public UserData GetUserDataByClientId(ulong clientId)
+        {
+            if (_clientIdToAuthDictionary.TryGetValue(clientId, out string authId))
+            {
+                if (_authIdToUserDataDictionary.TryGetValue(authId, out UserData data))
+                {
+                    return data;
+                }
+            }
+
+            return null;
+        }
+
     }
 }

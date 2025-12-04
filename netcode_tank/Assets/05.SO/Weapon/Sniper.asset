@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda88d146092ffc4394f16b7ddef6db0, type: 3}
   m_Name: Sniper
   m_EditorClassIdentifier: 
-  WeaponName: Sniper
+  WeaponType: 2
   Damage: 80
   RPM: 60
   projectileSpeed: 60

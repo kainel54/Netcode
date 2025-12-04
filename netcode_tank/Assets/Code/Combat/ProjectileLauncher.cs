@@ -16,6 +16,7 @@ namespace Code.Combat
         private Collider2D _playerCollider;
         [Header("Setting Values")]
         [SerializeField] private WeaponSO defaultWeaponData;
+        [SerializeField] private Weapon[] weapons;
         private WeaponSO weaponData;
 
         private Transform firePosition;
@@ -66,9 +67,10 @@ namespace Code.Combat
         public void WeaponChange(WeaponSO weaponSO)
         {
             if (_currentWeapon != null)
-                Destroy(_currentWeapon.gameObject);
+                _currentWeapon.gameObject.SetActive(false);
             weaponData = weaponSO;
-            _currentWeapon = Instantiate(weaponData.WeaponPrefab, weaponHolder.transform);
+            _currentWeapon = weapons[(int)weaponSO.WeaponType];
+            _currentWeapon.gameObject.SetActive(true);
             firePosition = _currentWeapon.firePosition;
         }
 

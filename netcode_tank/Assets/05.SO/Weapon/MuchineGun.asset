@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda88d146092ffc4394f16b7ddef6db0, type: 3}
   m_Name: MuchineGun
   m_EditorClassIdentifier: 
-  WeaponName: MuchineGun
+  WeaponType: 3
   Damage: 5
   RPM: 900
   projectileSpeed: 20

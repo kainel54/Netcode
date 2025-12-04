@@ -47,7 +47,7 @@ namespace Code.Network
         }
 
         //서버만 실행
-        public void SetTankName(string name)
+        public void SetCharacterName(string name)
         {
             playerName.Value = name;
         }
@@ -58,6 +58,8 @@ namespace Code.Network
             {
                 OnDisconnected?.Invoke(this);
             }
+
+            _nameText.text = playerName.Value.ToString();
 
             if (!IsOwner) return;
 
@@ -81,6 +83,7 @@ namespace Code.Network
         {
             if (!IsOwner) return;
 
+            playerName.OnValueChanged -= HandlePlayerNameChanged;
             _readyBtn.onClick.RemoveListener(HandleReadyBtnClick);
 
             foreach (Button button in _colorButtons)
@@ -143,6 +146,7 @@ namespace Code.Network
         {
             isReady = value;
             SetReadyClientRpc(isReady);
+            OnReadyChanged?.Invoke();
         }
 
         [ClientRpc]

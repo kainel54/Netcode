@@ -17,6 +17,7 @@ namespace Code.Players
 
         public void SetSprite(int index)
         {
+            Debug.Log("ChangeSprite");
             headRenderer.sprite = head[index];
             leftHandRenderer.sprite = leftHand[index];
             rightHandRenderer.sprite = rightHand[index];

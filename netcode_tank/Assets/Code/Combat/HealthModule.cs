@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,10 +21,10 @@ namespace Code.Combat
             if (IsClient)
             {
                 currentHealth.OnValueChanged += HandleChangeHealth;
-                HandleChangeHealth(0, maxHealth); //Ã³À½¿¡ °ªÀ» °»½ÅÇÑ´Ù.
+                HandleChangeHealth(0, maxHealth); //ì²˜ìŒì— ê°’ì„ ê°±ì‹ í•œë‹¤.
             }
 
-            if (!IsServer) return; //³×Æ®¿öÅ© º¯¼ö °ªÀº ¼­¹ö¸¸ °Çµå¸°´Ù.
+            if (!IsServer) return; //ë„¤íŠ¸ì›Œí¬ ë³€ìˆ˜ ê°’ì€ ì„œë²„ë§Œ ê±´ë“œë¦°ë‹¤.
             currentHealth.Value = maxHealth;
         }
 
@@ -53,9 +53,11 @@ namespace Code.Combat
             currentHealth.Value = Mathf.Clamp(currentHealth.Value + amount, 0, maxHealth);
             if (currentHealth.Value <= 0)
             {
+                Debug.Log("ì£½ìŒ");
                 OnDeadEvent?.Invoke();
                 IsDead = true;
             }
         }
+
     }
 }

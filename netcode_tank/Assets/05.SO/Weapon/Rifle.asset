@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda88d146092ffc4394f16b7ddef6db0, type: 3}
   m_Name: Rifle
   m_EditorClassIdentifier: 
-  WeaponName: Rifle
+  WeaponType: 1
   Damage: 30
   RPM: 600
   projectileSpeed: 25

@@ -26,11 +26,11 @@ namespace Code.Network
         private string _lobbyId;
         private const int _maxConnections = 8;
 
-        private NetworkServer _networkServer;
+        public NetworkServer NetworkServer { get; private set; }
 
         private void MakeNetworkServer()
         {
-            _networkServer = new NetworkServer(NetworkManager.Singleton);
+            NetworkServer = new NetworkServer(NetworkManager.Singleton);
         }
 
 
@@ -158,7 +158,7 @@ public void Dispose()
             }
 
             _lobbyId = string.Empty;
-            _networkServer?.Dispose();
+            NetworkServer?.Dispose();
         }
 
     }
