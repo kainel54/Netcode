@@ -11,7 +11,7 @@ namespace Code.Network
         private void Start()
         {
             DontDestroyOnLoad(gameObject);
-            //차후 데디케이트 서버를 만들기 위한 구조
+            
             LaunchInMode(SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Null);
         }
 
@@ -19,11 +19,11 @@ namespace Code.Network
         {
             if (isDedicatedServer)
             {
-                //do something in later
+                
             }
             else
             {
-                HostSingleton hostSingleton = Instantiate(_hostPrefab); //순서바꾸면 안돼
+                HostSingleton hostSingleton = Instantiate(_hostPrefab); 
                 hostSingleton.CreateHost();
 
                 ClientSingleton clientSingleton = Instantiate(_clientPrefab);
@@ -31,7 +31,7 @@ namespace Code.Network
 
                 if (authenticated)
                 {
-                    //차후 이곳에 에셋 로딩부분이 들어가야 한다.
+                    
                     Debug.Log("Load");
                     ClientSingleton.Instance.GameManager.GotoMenu();
                 }
